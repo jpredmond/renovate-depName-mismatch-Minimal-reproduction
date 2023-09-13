@@ -1,0 +1,7 @@
+variables:
+  IMAGE_TEST_1: hub.docker.com/jredmond/type_1_image:1
+  IMAGE_TEST_2: hub.docker.com/jredmond/type_2_image:1
+  IMAGE_TEST_3: hub.docker.com/jredmond/type_3_image:1
+  WORKAROUND_TEST_1: hub.docker.com/jredmond/type_1_image:1
+  WORKAROUND_TEST_2: hub.docker.com/jredmond/type_2_image:1
+  WORKAROUND_TEST_3: hub.docker.com/jredmond/type_3_image:1
