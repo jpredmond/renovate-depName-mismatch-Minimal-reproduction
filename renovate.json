@@ -16,7 +16,8 @@
             "matchStrings": [
                 "\\n\\s*IMAGE_TEST_\\S+: (?<depName>jpredmond\\/[^:]*?):(?<currentValue>\\d+)\\s"
             ],
-            "datasourceTemplate": "docker"
+            "datasourceTemplate": "docker",
+            "registryUrlTemplate": "docker.io"
         },
         {
             "description": [
@@ -28,7 +29,8 @@
                 "\\n\\s*WORKAROUND_TEST_\\S+: (?<depName>jpredmond\\/[^:]*?):(?<currentValue>\\d+)\\s"
             ],
             "autoReplaceStringTemplate": "{{{depName}}}:{{{newValue}}}",
-            "datasourceTemplate": "docker"
+            "datasourceTemplate": "docker",
+            "registryUrlTemplate": "docker.io"
         }
     ]
 }
