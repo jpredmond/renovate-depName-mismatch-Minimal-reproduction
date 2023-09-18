@@ -14,7 +14,7 @@
             ],
             "fileMatch": ["^\\.gitlab-ci\\.yml$"],
             "matchStrings": [
-                "\\n\\s*IMAGE_TEST_\\S+: (?<depName>jpredmond\\/[^:]*?):(?<currentValue>\\d+)\\s"
+                "\\n\\s*IMAGE_TEST_\\S+: (?<depName>jpredmond\/[^:]*?):(?<currentValue>\\d+)\\s"
             ],
             "datasourceTemplate": "docker",
             "registryUrlTemplate": "docker.io"
@@ -26,7 +26,7 @@
             ],
             "fileMatch": ["^\\.gitlab-ci\\.yml$"],
             "matchStrings": [
-                "\\n\\s*WORKAROUND_TEST_\\S+: (?<depName>jpredmond\\/[^:]*?):(?<currentValue>\\d+)\\s"
+                "\\n\\s*WORKAROUND_TEST_\\S+: (?<depName>jpredmond\/[^:]*?):(?<currentValue>\\d+)\\s"
             ],
             "autoReplaceStringTemplate": "{{{depName}}}:{{{newValue}}}",
             "datasourceTemplate": "docker",
