@@ -2,6 +2,6 @@ variables:
   IMAGE_TEST_1: jpredmond/type_1_image:1
   IMAGE_TEST_2: jpredmond/type_2_image:1
   IMAGE_TEST_3: jpredmond/type_3_image:3
-  WORKAROUND_TEST_1: jpredmond/type_1_image:1
-  WORKAROUND_TEST_2: jpredmond/type_2_image:1
-  WORKAROUND_TEST_3: jpredmond/type_3_image:3
+  WORKAROUND_TEST_1: jpredmond/another_type_1_image:1
+  WORKAROUND_TEST_2: jpredmond/another_type_2_image:1
+  WORKAROUND_TEST_3: jpredmond/another_type_3_image:3
