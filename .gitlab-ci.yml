@@ -1,7 +1,7 @@
 variables:
-  IMAGE_TEST_1: https://docker.io/jpredmond/type_1_image:1
-  IMAGE_TEST_2: https://docker.io/jpredmond/type_2_image:1
-  IMAGE_TEST_3: https://docker.io/jpredmond/type_3_image:3
-  WORKAROUND_TEST_1: https://docker.io/jpredmond/type_1_image:1
-  WORKAROUND_TEST_2: https://docker.io/jpredmond/type_2_image:1
-  WORKAROUND_TEST_3: https://docker.io/jpredmond/type_3_image:3
+  IMAGE_TEST_1: docker.io/jpredmond/type_1_image:1
+  IMAGE_TEST_2: docker.io/jpredmond/type_2_image:1
+  IMAGE_TEST_3: docker.io/jpredmond/type_3_image:3
+  WORKAROUND_TEST_1: docker.io/jpredmond/type_1_image:1
+  WORKAROUND_TEST_2: docker.io/jpredmond/type_2_image:1
+  WORKAROUND_TEST_3: docker.io/jpredmond/type_3_image:3
