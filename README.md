@@ -31,18 +31,18 @@ variables:
 
 ## Expected behavior:
 
-We expect that the tag (":6") in the variable value should be changed to the latest available tag (i.e., ":9").
+We expect that the tag (":7") in the variable value should be changed to the latest available tag (i.e., ":8").
 
 
 ## Current behavior:
 
 The update fails, with the following message in the debug log:
 ```
-"manager":"regex","packageFile":".gitlab-ci.yml","currentDepName":"our_group/a_subgroup/our_project/some_folder/image_name_ending_with_rhel7-x86_64","newDepName":"our_group/a_subgroup/our_project/some_folder/image_name_ending_with_rhel7-x89_94","msg":"depName mismatch"
+"manager":"regex","packageFile":".gitlab-ci.yml","currentDepName":"our_group/a_subgroup/our_project/some_folder/image_name_ending_with_rhel7-x86_64","newDepName":"our_group/a_subgroup/our_project/some_folder/image_name_ending_with_rhel8-x86_64","msg":"depName mismatch"
 ```
 
 ## Discussion:
-So apparently some step in the process is applying the change from "6" to "9" to the depName instead of (or in addition to) applying it to the tag.
+So apparently some step in the process is applying the change from "7" to "8" to the depName instead of (or in addition to) applying it to the tag.
 
 This behavior seems similar if not identical to the one documented in [Issue 8061](https://github.com/renovatebot/renovate/issues/8061), but that issue is marked as fixed.  I don't know if there could have been a regression that caused the issue to reappear, or if this is a different root cause with the same symptom.  In some discussions I found regarding that issue I saw a suggestion to add an autoReplaceStringTemplate setting to the regexManager, so I tried adding this line:
 ```json
