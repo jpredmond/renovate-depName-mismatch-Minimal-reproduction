@@ -1,5 +1,5 @@
 # renovate-depName-mismatch-repro
-Attempt to mininally reproduce a problem with regex manager depName mismatch errors.
+Attempt to mininally reproduce a problem with regex manager depName mismatch errors.  (OK, this is actually not quite minimal - I needed multiple dependencies to demonstrate how a proposed workaround caused a failure that involved crosstalk between multiple dependencies.  I will create another repo that is truly minimal and just shows the primary issue.)
 
 ## Background:
 Our GitLab CI configuration file contains a number of variables that specify container image URLs, so that those images can be referenced via the variables in the "image:" sections of various jobs that use the same image without duplication.  The standard managers do not interpret those variables, so we are attempting to use a regexManager to update these images.
