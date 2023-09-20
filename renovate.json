@@ -9,25 +9,13 @@
     "regexManagers": [
         {
             "description": [
-                "This was my first attempt to update images referenced in CI variables. ",
+                "This was my attempt to update images referenced in CI variables. ",
                 "Renovate tried to change numbers in the depName and then complained of a depName mismatch."
             ],
             "fileMatch": ["^\\.gitlab-ci\\.yml$"],
             "matchStrings": [
                 "\\n\\s*IMAGE_TEST_\\S+: (?<depName>jpredmond\/[^:]*?):(?<currentValue>\\d+)\\s"
             ],
-            "datasourceTemplate": "docker"
-        },
-        {
-            "description": [
-                "This was my attempt to work around the original problem. ",
-                "Renovate tried to change depNames to values in different lines and then complained of a depName mismatch."
-            ],
-            "fileMatch": ["^\\.gitlab-ci\\.yml$"],
-            "matchStrings": [
-                "\\n\\s*WORKAROUND_TEST_\\S+: (?<depName>jpredmond\/[^:]*?):(?<currentValue>\\d+)\\s"
-            ],
-            "autoReplaceStringTemplate": "{{{depName}}}:{{{newValue}}}",
             "datasourceTemplate": "docker"
         }
     ]
