@@ -3,11 +3,11 @@
         "config:recommended"
     ],
     "enabledManagers": [
-        "dockerfile",
         "regex"
     ],
     "regexManagers": [
         {
+            "customType": "regex",
             "description": [
                 "This was my attempt to update images referenced in CI variables. ",
                 "Renovate tried to change numbers in the depName and then complained of a depName mismatch."
