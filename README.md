@@ -1,5 +1,5 @@
 # renovate-depName-mismatch-repro
-Attempt to mininally reproduce a problem with regex manager depName mismatch errors.  (OK, this is actually not quite minimal - I needed multiple dependencies to demonstrate how a proposed workaround caused a failure that involved crosstalk between multiple dependencies.  I will create another repo that is truly minimal and just shows the primary issue.)
+Attempt to mininally reproduce a problem with regex manager depName mismatch errors.
 
 ## Background:
 Our GitLab CI configuration file contains a number of variables that specify container image URLs, so that those images can be referenced via the variables in the "image:" sections of various jobs that use the same image without duplication.  The standard managers do not interpret those variables, so we are attempting to use a regexManager to update these images.
@@ -44,14 +44,6 @@ The update fails, with the following message in the debug log:
 ## Discussion:
 So apparently some step in the process is applying the change from "7" to "8" to the depName instead of (or in addition to) applying it to the tag.
 
-This behavior seems similar if not identical to the one documented in [Issue 8061](https://github.com/renovatebot/renovate/issues/8061), but that issue is marked as fixed.  I don't know if there could have been a regression that caused the issue to reappear, or if this is a different root cause with the same symptom.  In some discussions I found regarding that issue I saw a suggestion to add an autoReplaceStringTemplate setting to the regexManager, so I tried adding this line:
-```json
-   "autoReplaceStringTemplate": "{{{depName}}}:{{{newValue}}}",
-```
+This behavior seems similar if not identical to the one documented in [Issue 8061](https://github.com/renovatebot/renovate/issues/8061), but that issue is marked as fixed.  I don't know if there could have been a regression that caused the issue to reappear, or if this is a different root cause with the same symptom.
 
-This changed the error somewhat but didn't solve it.  The resulting "depName mismatch" error indicated that with this addition to the configuration, the depName was being changed to a different depName in the same file.
-```
-"manager":"regex","packageFile":".gitlab-ci.yml","currentDepName":"our_group/a_subgroup/our_project/some_folder/image_name_ending_with_rhel7-x86_64","newDepName":"our_group/a_subgroup/our_project/some_folder/image_name_ending_with_ubuntu_20_04-x86_64","msg":"depName mismatch"
-```
-
-In this replication repo I am demonstrating both the original problem and the unsuccessful workaround at the same time, using variables starting with "IMAGE_TEST_" and "WORKAROUND_TEST_" respectively.
+See a [less minimal reproduction repo](https://github.com/jpredmond/renovate-depName-mismatch-repro) for a version that shows that a suggested workaround does not work for this scenario.
